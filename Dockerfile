@@ -7,5 +7,5 @@ WORKDIR /var/www/html/
 RUN unzip dotnet.zip
 RUN cp -r digital-agency-website-template/* .
 RUN rm -rf digital-agency-website-template dotnet.zip
-RUN systemctl start httpd
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
